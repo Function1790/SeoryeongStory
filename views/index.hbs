@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <title>서령스토리</title>
+</head>
+
+<body>
+    <div class="root flex-col">
+        <div class="topbar flex-row">
+            <div class="topbar-header center">
+                <div class="logo">SRstory</div>
+            </div>
+            <div class="topbar-container flex-row">
+                <div class="linker center"><a href="/write">Write</a></div>
+            </div>
+            <div class="topbar-footer"></div>
+        </div>
+        <div class="container flex-col">
+            <div class="event-wrap flex-row">
+                <div class="event-header">
+
+                </div>
+                <div class="event-content center flex-col">
+                    <div>1학년 축구 리그전 현재 스코어</div>
+                    <br>
+                    <div>3반 8반</div>
+                    <div>1 vs 0</div>
+                </div>
+                <div class="event-footer">
+
+                </div>
+            </div>
+            <div class="post-wrap">
+                {{#each stories}}
+                <div class="post flex-row">
+                    <div class="post-header">
+                        <div class="user-icon">
+                            <img src="img/user.png">
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="user-info-wrap flex-row">
+                            <div class="user-name center">{{postUid}}</div>
+                        </div>
+                        <div class="post-desc">
+                            {{content}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="navbar flex-row"></div>
+    </div>
+</body>
+
+</html>
