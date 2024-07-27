@@ -18,8 +18,15 @@ export class StoryController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number) {
+  @Render('read')
+  findOneHTML(@Param('id') id: number) {
     return this.storyService.findOne(id);
+  }
+
+  @Get('/write')
+  @Render('write')
+  writeHTML() {
+    //return this.storyService.findOne(id);
   }
 
   @Post()
@@ -27,7 +34,7 @@ export class StoryController {
     return this.storyService.create(storyDTO);
   }
 
-  @Delete(':id')
+  @Get('delete/:id')
   delete(@Param('id') id: number) {
     return this.storyService.remove(id);
   }

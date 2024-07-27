@@ -1,0 +1,33 @@
+#write-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  height: auto;
+  font-size: 17px;
+  width: 100%;
+}
+
+.post-content {
+  width: 60%;
+}
+
+.post-desc {
+  height: auto;
+}
+
+.sumbit-wrap {
+  justify-content: end;
+  width: 100%;
+  margin: 10px;
+}
+
+.submit {
+  background-color: #2b78fc;
+  border: none;
+  border-radius: 50px;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}

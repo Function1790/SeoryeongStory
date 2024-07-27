@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+  <form action="/auth/register" method="post">
+    <div class="root center">
+      <div class="login-wrap flex-col">
+        <div class="login-header center">Register</div>
+        <div class="login-main center flex-col">
+          <div class="input-wrap">
+            <img src="/img/id.png">
+            <input type="text" name="uid" placeholder="uid" class="text-input">
+          </div>
+          <div class="input-wrap">
+            <img src="/img/pw.png">
+            <input type="text" name="upw" placeholder="upw" class="text-input">
+          </div>
+          <input type="submit" value="Login" class="center submit">
+        </div>
+        <div class="login-bottom flex-row">
+          <div class="help-button">
+            <a href="/auth/login">Login</a>
+          </div>
+          <div class="help-button"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

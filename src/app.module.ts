@@ -22,6 +22,7 @@ import { User } from './auth/entity/user.entity';
       database: 'sstory',
       entities: [Story, User],
       synchronize: true,
+      logging: false
     }),
   ],
   controllers: [AppController],

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/write.css">
+    <title>서령스토리</title>
+</head>
+
+<body>
+    <form action="/story/write" method="post">
+        <div class="root flex-col">
+            <div class="topbar flex-row">
+                <div class="topbar-header center">
+                    <div class="logo">SRstory</div>
+                </div>
+                <div class="topbar-container flex-row">
+                    <div class="linker center"><a href="/story">Story</a></div>
+                    <div class="linker center"><a href="/story/write">Write</a></div>
+                    <div class="linker center"><a href="/auth/profile">Profile</a></div>
+                    <div class="linker center"><a href="/auth/login">Login</a></div>
+                </div>
+                <div class="topbar-footer"></div>
+            </div>
+            <div class="container flex-col center">
+                <div class="post-wrap">
+                    <div class="post flex-row">
+                        <div class="post-header">
+                            <div class="user-icon">
+                                <img src="img/user.png">
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <div class="user-info-wrap flex-row">
+                                <div class="user-name center">{{postUid}}</div>
+                            </div>
+                            <div class="post-desc">
+                                <textarea name="content" id="write-input"></textarea>
+                            </div>
+                            <div class="sumbit-wrap flex-row">
+                                <input type="submit" value="SUBMIT" class="submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+            </div>
+        </div>
+    </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    const DEFAULT_HEIGHT = 15; // textarea 기본 height
+
+    const $textarea = document.querySelector('#write-input');
+    $textarea.oninput = (event) => {
+        const $target = event.target;
+
+        $target.style.height = 0;
+        $target.style.height = DEFAULT_HEIGHT + $target.scrollHeight + 'px';
+    };
+</script>
+
+</html>

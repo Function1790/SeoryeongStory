@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/post.css">
     <title>서령스토리</title>
 </head>
 
@@ -24,26 +24,11 @@
             <div class="topbar-footer"></div>
         </div>
         <div class="container flex-col">
-            <div class="event-wrap flex-row">
-                <div class="event-header">
-
-                </div>
-                <div class="event-content center flex-col">
-                    <div>1학년 축구 리그전 현재 스코어</div>
-                    <br>
-                    <div>3반 8반</div>
-                    <div>1 vs 0</div>
-                </div>
-                <div class="event-footer">
-
-                </div>
-            </div>
             <div class="post-wrap">
-                {{#each stories}}
                 <div class="post flex-row">
                     <div class="post-header">
                         <div class="user-icon">
-                            <img src="img/user.png">
+                            <img src="/img/user.png">
                         </div>
                     </div>
                     <div class="post-content">
@@ -53,9 +38,16 @@
                         <div class="post-desc">
                             {{content}}
                         </div>
+                        <div class="button-wrap flex-row">
+                            <a href="/story/modify/{{id}}">
+                                <div class="handle-button">Modify</div>
+                            </a>
+                            <a href="/story/delete/{{id}}">
+                                <div class="handle-button">Delete</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                {{/each}}
             </div>
         </div>
         <div class="navbar">

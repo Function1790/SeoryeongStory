@@ -11,6 +11,10 @@ export class UserService {
     @InjectRepository(User) private userRepository: Repository<User>
   ) { }
 
+  async findById(id: number): Promise<User | undefined> {
+    return await this.userRepository.findOneBy({ id: id });
+  }
+
   async findByFields(option: FindOneOptions<UserDTO>): Promise<User | undefined> {
     return await this.userRepository.findOne(option);
   }

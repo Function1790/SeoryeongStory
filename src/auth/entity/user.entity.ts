@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -10,4 +10,7 @@ export class User {
   
   @Column()
   upw: string;
+
+  /*@OneToMany(type=>UserAuthority, userAuthority=> userAuthority.user, {eager: true})
+  authorities?: any[];*/
 }
