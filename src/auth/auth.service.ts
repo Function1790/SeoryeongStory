@@ -4,6 +4,8 @@ import { UserDTO } from './dto/user.dto';
 import * as bcrypt from 'bcrypt';
 import { Payload } from './security/payload.interface';
 import { JwtService } from '@nestjs/jwt';
+import * as jwt from 'jsonwebtoken';
+import { User } from './entity/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -45,5 +47,15 @@ export class AuthService {
 
   async tokenValidateUser(payload: Payload): Promise<UserDTO | undefined> {
     return await this.userService.findById(payload.id)
+  }
+
+  isCorrectJWT(jwtString: string): User | false {
+    try {
+      const payload = jwt.verify(jwtString, "SECRET") as (jwt.JwtPayload | string) & (User)
+      //payload => { id: 1, uid: 'guest', iat: 1722059706, exp: 1722060006 }
+      return payload
+    } catch (e) {
+      return false
+    }
   }
 }

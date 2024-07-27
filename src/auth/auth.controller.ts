@@ -25,7 +25,8 @@ export class AuthController {
       return 'wrong'
     }
     res.setHeader('Authorization', 'Bearer ' + jwt.accessToken);
-    return res.json(jwt)
+    res.cookie("token", jwt.accessToken, { maxAge: 900000, httpOnly: true });
+    return res.redirect(`/story`)
   }
 
   @Post('register')
@@ -33,8 +34,16 @@ export class AuthController {
     return await this.authService.register(userDTO)
   }
 
-  @Get('/authenticate')
-  @UseGuards(AuthGuard)
+  @Post('/test')
+  async test(@Headers() headers: any){
+    console.log(headers)
+    const jwtString = headers.authorization.split('Bearer ')[1];
+    console.log(jwtString);
+    //console.log(this.authService.verify(jwtString));
+  }
+
+  @Get('authenticate')
+  @UseGuards(AuthGuard())
   isAuthenticated(@Headers() headers: any, @Req() req: Request): any {
     console.log(headers)
     const user: any = req.user;

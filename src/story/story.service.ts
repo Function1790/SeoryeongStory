@@ -3,11 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Story } from './entity/story.entity';
 import { StoryDTO } from './dto/story.dto';
+import * as jwt from 'jsonwebtoken';
 
 @Injectable()
 export class StoryService {
   constructor(
-    @InjectRepository(Story) private storyRepository: Repository<Story>
+    @InjectRepository(Story) private storyRepository: Repository<Story>,
   ) { }
 
   findAll(): Promise<Story[]> {
@@ -18,11 +19,11 @@ export class StoryService {
     return this.storyRepository.findOneBy({ id: id })
   }
 
-  async create(storyDTO: StoryDTO): Promise<Story> {
+  async create(storyDTO: StoryDTO, uid: string): Promise<Story> {
     return this.storyRepository.save({
       content: storyDTO.content,
       postTime: new Date(),
-      postUid: 'guest',
+      postUid: uid,
     });
   }
 

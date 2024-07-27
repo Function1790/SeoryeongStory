@@ -10,7 +10,4 @@ export class User {
   
   @Column()
   upw: string;
-
-  /*@OneToMany(type=>UserAuthority, userAuthority=> userAuthority.user, {eager: true})
-  authorities?: any[];*/
 }

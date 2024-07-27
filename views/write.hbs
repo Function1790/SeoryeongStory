@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/post.css">
-    <link rel="stylesheet" href="css/write.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/write.css">
     <title>서령스토리</title>
 </head>
 
@@ -15,7 +15,9 @@
         <div class="root flex-col">
             <div class="topbar flex-row">
                 <div class="topbar-header center">
-                    <div class="logo">SRstory</div>
+                    <div class="logo">
+                        <a href="/story">SRstory</a>
+                    </div>
                 </div>
                 <div class="topbar-container flex-row">
                     <div class="linker center"><a href="/story">Story</a></div>
@@ -30,12 +32,12 @@
                     <div class="post flex-row">
                         <div class="post-header">
                             <div class="user-icon">
-                                <img src="img/user.png">
+                                <img src="/img/user.png">
                             </div>
                         </div>
                         <div class="post-content">
                             <div class="user-info-wrap flex-row">
-                                <div class="user-name center">{{postUid}}</div>
+                                <div class="user-name center">{{uid}}</div>
                             </div>
                             <div class="post-desc">
                                 <textarea name="content" id="write-input"></textarea>
